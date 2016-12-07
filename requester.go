@@ -64,7 +64,7 @@ func createGetRequest(config *RequestConfig) (*http.Request, error) {
 
 func createPostRequest(config *RequestConfig) (*http.Request, error) {
 	return http.NewRequest(config.Method,
-		config.URL, bytes.NewBuffer(config.Body))
+		config.URL+"?"+config.Values.Encode(), bytes.NewBuffer(config.Body))
 }
 
 func addHeaders(request *http.Request, headers map[string]string) {
