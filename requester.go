@@ -27,6 +27,7 @@ type createRequest func(config *RequestConfig) (*http.Request, error)
 var (
 	requestsMaker = map[string]createRequest{
 		"POST": createPostRequest,
+		"PUT":  createPostRequest,
 		"GET":  createGetRequest,
 	}
 )
